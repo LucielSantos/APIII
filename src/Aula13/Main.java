@@ -5,22 +5,27 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args) {
-        ContaCorrente douglas= new ContaCorrente();
-        douglas.ler();
-        ContaCorrente julia = new ContaCorrente();
-        julia.ler();
+        ContaCorrente conta= new ContaCorrente();
 
-        ArrayList<ContaCorrente> banco= new ArrayList<>();
+        ArrayList<ContaCorrente> lista= new ArrayList<>();
 
-//        banco.add(douglas);
-//        banco.add(0,julia);
-//        banco.remove(douglas);
-//        banco.remove(0);
-//        banco.size();
-        banco.contains(julia);
-        banco.get(0).getTitular().equals(julia.getTitular());
-//        banco.indexOf(julia);
-//        banco.isEmpty();
+        for (int i=0;i<2;i++){
+            ContaCorrente aux= new ContaCorrente();
+            aux.ler();
+            lista.add(aux);
+        }
+            System.out.println(lista.toString());
+
+
+//        lista.add(douglas);
+//        lista.add(0,julia);
+//        lista.remove(douglas);
+//        lista.remove(0);
+//        lista.size();
+//        lista.contains(julia);
+//        lista.get(0).getTitular().equals(julia.getTitular());
+//        lista.indexOf(julia);
+//        lista.isEmpty();
 
     }
 }

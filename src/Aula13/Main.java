@@ -12,6 +12,11 @@ public class Main {
         for (int i=0;i<2;i++){
             ContaCorrente aux= new ContaCorrente();
             aux.ler();
+            int tam= lista.size()-1;
+            while (tam>=0){
+                System.out.println(aux.getTitular().equals(lista.get(tam).getTitular()));
+                tam--;
+            }
             lista.add(aux);
         }
             System.out.println(lista.toString());

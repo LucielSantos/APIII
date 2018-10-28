@@ -12,10 +12,6 @@ public class ContaCorrente {
     private double limite;
     private int numeroConta;
 
-    public ContaCorrente(){
-        System.out.println("Criando Conta");
-    }
-
     public void ler(){
 
         System.out.print("Digite o Número da Agênica: ");
@@ -37,7 +33,6 @@ public class ContaCorrente {
         }else{
             this.setLimite(100);
         }
-
     }
 
     public Cliente getTitular() {
@@ -90,8 +85,22 @@ public class ContaCorrente {
     }
 
     public void mostraSaldo(){
-        System.out.println("Seu saldo é: "+this.getSaldo());
+        System.out.println("Seu saldo é: "+(this.getSaldo()+this.limite));
     }
+
+    public boolean tansferecia(int valor, ContaCorrente destino){
+        if (this.sacar(valor)){
+            return destino.deposito(valor);
+        }else {
+            return false;
+        }
+    }
+
+    public boolean deposito(int valor){
+        setSaldo(getSaldo()+valor);
+        return true;
+    }
+
     public boolean sacar(double valor){
         if(this.getLimite()+this.getSaldo()>valor){
             this.setSaldo(this.getSaldo()-valor);

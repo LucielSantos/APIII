@@ -28,12 +28,12 @@ public class Main {
                     ContaCorrente aux= new ContaCorrente();
                     aux.ler();
                     int tam= lista.size()-1;
-                    boolean verif=true;
+                    boolean verif=false;
                     while (tam>=0){
                         verif=aux.getTitular().equals(lista.get(tam).getTitular());
                         tam--;
                     }
-                    if (!verif) {
+                    if (verif==false) {
                         lista.add(aux);
                     }else {
                         System.out.println("ja criada");
@@ -57,22 +57,22 @@ public class Main {
 
         System.out.println(lista.toString());
 
-//        for (int i=0;i<2;i++){
-//            ContaCorrente aux= new ContaCorrente();
-//            aux.ler();
-//            int tam= lista.size()-1;
-//            boolean cu=true;
-//            while (tam>=0){
-//                cu=aux.getTitular().equals(lista.get(tam).getTitular());
-//                tam--;
-//            }
-//            if (!cu) {
-//                lista.add(aux);
-//            }else {
-//                System.out.println("ja criada");
-//            }
-//        }
-//            System.out.println(lista.toString());
+        for (int i=0;i<2;i++){
+            ContaCorrente aux= new ContaCorrente();
+            aux.ler();
+            int tam= lista.size()-1;
+            boolean coisa=true;
+            while (tam>=0){
+                coisa=aux.getTitular().equals(lista.get(tam).getTitular());
+                tam--;
+            }
+            if (!coisa) {
+                lista.add(aux);
+            }else {
+                System.out.println("ja criada");
+            }
+        }
+            System.out.println(lista.toString());
 
 
 //        lista.add(douglas);

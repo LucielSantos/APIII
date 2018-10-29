@@ -84,6 +84,14 @@ public class ContaCorrente {
                 Objects.equals(titular, that.titular);
     }
 
+    public boolean equalsNConta(int numero){
+        if (this.getNumeroConta()==numero){
+            return true;
+        }else {
+            return false;
+        }
+    }
+
     public void mostraSaldo(){
         System.out.println("Seu saldo é: "+(this.getSaldo()+this.limite));
     }

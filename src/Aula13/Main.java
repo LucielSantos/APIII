@@ -35,10 +35,26 @@ public class Main {
                     }
                     if (verif==false) {
                         lista.add(aux);
+                        System.out.println("Conta Criada");
                     }else {
                         System.out.println("ja criada");
                     }
+                    System.out.println("-----");
                     break;
+                case "2":
+                    System.out.print("Número da Conta :");
+                    int nConta= conta.tc.nextInt();
+                    boolean verif2;
+                    tam=lista.size()-1;
+                    while (tam>=0){
+                        verif2=lista.get(tam).equalsNConta(nConta);
+                        if (!verif2){
+                            System.out.println("Não há conta com este número");
+                        }else {
+                            lista.get(tam).mostraSaldo();
+                        }
+                        tam--;
+                    }
 
             }
 

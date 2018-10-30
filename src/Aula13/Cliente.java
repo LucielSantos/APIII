@@ -1,5 +1,6 @@
 package Aula13;
 
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Objects;
 import java.util.Scanner;
@@ -101,6 +102,17 @@ public class Cliente {
         if (o == null || getClass() != o.getClass()) return false;
         Cliente cliente = (Cliente) o;
         return Objects.equals(CPF, cliente.CPF);
+    }
+
+    public boolean verifCpf(ContaCorrente conta, ArrayList<ContaCorrente> array){
+        System.out.println("tamanho: "+array.size());
+        boolean verif=false;
+        int tam= array.size()-1;
+        while (tam>=0){
+            verif=conta.getTitular().equals(array.get(tam).getTitular());
+            tam --;
+        }
+        return verif;
     }
 
     public void ler() {

@@ -5,6 +5,8 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args) {
+        Cliente cliente= new Cliente();
+
         ContaCorrente conta= new ContaCorrente();
 
         ArrayList<ContaCorrente> lista= new ArrayList<>();
@@ -27,12 +29,7 @@ public class Main {
                 case "1":
                     ContaCorrente aux= new ContaCorrente();
                     aux.ler();
-                    int tam= lista.size()-1;
-                    boolean verif=false;
-                    while (tam>=0){
-                        verif=aux.getTitular().equals(lista.get(tam).getTitular());
-                        tam--;
-                    }
+                    boolean verif=cliente.verifCpf(aux, lista);
                     if (!verif) {
                         lista.add(aux);
                         System.out.println("Conta Criada");
@@ -45,7 +42,8 @@ public class Main {
                 case "2":
                     System.out.print("Número da Conta :");
                     int nConta= conta.tc.nextInt();
-                    tam=lista.size()-1;
+                    int tam=lista.size()-1;
+                    ;
                     while (tam>=0){
                         verif=lista.get(tam).equalsNConta(nConta);
                         if (!verif){

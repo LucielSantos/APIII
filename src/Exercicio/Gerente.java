@@ -1,18 +1,22 @@
 package Exercicio;
 
+import java.util.ArrayList;
+
 public class Gerente extends Pessoa {
-    public Gerente(){
+    public Gerente addGerente(){
+        Gerente gerente= new Gerente();
         System.out.println("ADICIONANDO GERENTE");
         System.out.print("Digite o nome: ");
-        this.setNome(read.next());
+        gerente.setNome(read.next());
         System.out.print("Digite o email: ");
-        this.setEmail(read.next());
-        System.out.print("Digite o Telefone");
-        this.setTelefone(read.next());
+        gerente.setEmail(read.next());
+        System.out.print("Digite o Telefone: ");
+        gerente.setTelefone(read.next());
         System.out.print("Digite o Login: ");
-        this.setLogin(read.next());
+        gerente.setLogin(read.next());
         System.out.print("Digite a Senha: ");
-        this.setSenha(read.next());
+        gerente.setSenha(read.next());
+        return gerente;
     }
 
     public Cliente addCliente(){
@@ -23,5 +27,31 @@ public class Gerente extends Pessoa {
     public Tecnico addTecnico(){
         Tecnico tecnico= new Tecnico();
         return tecnico;
+    }
+
+    public boolean validarLogin(ArrayList <Pessoa> array, String login){
+        if (array.size()==0){
+            return false;
+        }else {
+            for (int i=0; i<array.size(); i++){
+                if (array.get(i).getLogin().equals(login)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public boolean validarSenha(ArrayList <Pessoa> array, String senha){
+        if (array.size()==0){
+            return false;
+        }else {
+            for (int i=0; i<array.size(); i++){
+                if (array.get(i).getSenha().equals(senha)){
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }

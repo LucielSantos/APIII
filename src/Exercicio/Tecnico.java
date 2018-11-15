@@ -9,7 +9,7 @@ public class Tecnico extends Pessoa {
         this.setNome(read.next());
         System.out.print("Digite o email: ");
         this.setEmail(read.next());
-        System.out.print("Digite o Telefone");
+        System.out.print("Digite o Telefone: ");
         this.setTelefone(read.next());
         System.out.print("Digite o Login: ");
         this.setLogin(read.next());

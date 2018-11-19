@@ -1,9 +1,11 @@
 package Exercicio;
 
+import java.util.ArrayList;
+
 public class Tecnico extends Pessoa {
 
 
-    public Tecnico (){
+    public void ler (){
         System.out.println("ADICIONANDO TÉCNICO");
         System.out.print("Digite o nome: ");
         this.setNome(read.next());

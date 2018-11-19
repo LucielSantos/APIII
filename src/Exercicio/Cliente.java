@@ -1,9 +1,11 @@
 package Exercicio;
 
+import java.util.ArrayList;
+
 public class Cliente extends Pessoa {
 
 
-    public Cliente (){
+    public void ler (){
         System.out.println("ADICIONANDO CLIENTE");
         System.out.print("Digite o nome: ");
         this.setNome(read.next());
@@ -17,8 +19,16 @@ public class Cliente extends Pessoa {
         this.setSenha(read.next());
     }
 
-    public Chamado addChamado(){
-        Chamado chamado=new Chamado(this.getNome());
+    public Chamado addChamado(Cliente cliente, ArrayList <Pessoa> array){
+        Chamado chamado=new Chamado();
+        chamado.ler();
+        chamado.cliente=cliente;
+        for (int i=0; i<array.size()-1; i++){
+            if (array.get(i) instanceof Tecnico){
+                chamado.tecnico = array.get(i);
+                break;
+            }
+        }
         return chamado;
     }
 

@@ -6,19 +6,6 @@ public class Pessoa {
     private String nome, telefone, email, login, senha;
     Scanner read = new Scanner(System.in);
 
-    public Pessoa(){
-       /*System.out.println("Nome: ");
-       this.nome = read.next();
-       System.out.println("Telefone: ");
-       this.telefone = read.next();
-       System.out.println("E-mail: ");
-       this.email = read.next();*/
-//        System.out.println("Login: ");
-//        this.login = read.next();
-//        System.out.println("Senha: ");
-//        this.senha = read.next();
-    }
-
     //-----------------------------------------------------------------------------------------------------------------
 
     public String getNome() {

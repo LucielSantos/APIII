@@ -20,7 +20,7 @@ public class Main {
         agenda.add(gerente);
         agenda.add(gerente.cadastrarCliente());
         agenda.add(gerente.cadastrarTecnico());
-        agenda.add(gerente.cadastrarGerente());
+        agenda.add(gerente.cadastrarTecnico());
 
         for (int i=0; i<agenda.size(); i++){
             System.out.println(agenda.get(i).toString());
@@ -177,6 +177,18 @@ public class Main {
             }
         } while (valida != true && chances >= 1);
 
+        if (userLogado instanceof Cliente){
+            System.out.println("Abrindo Chamado como cliente");
+            chamados.add(((Cliente) userLogado).abrirChamado(userLogado, gerente.acharTecnicoMenosChamados(agenda)));
+            System.out.println("Added");
+        }else if (userLogado instanceof Gerente){
+            System.out.println("Abrindo Chamado como Gerente");
+            chamados.add(((Gerente) userLogado).abrirChamado(userLogado, gerente.acharTecnicoMenosChamados(agenda)));
+            System.out.println("added");
+        }else {
+            System.out.println("Error");
+        }
+        System.out.print("********************************************");
         if (userLogado instanceof Cliente){
             System.out.println("Abrindo Chamado como cliente");
             chamados.add(((Cliente) userLogado).abrirChamado(userLogado, gerente.acharTecnicoMenosChamados(agenda)));

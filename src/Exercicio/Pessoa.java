@@ -3,25 +3,30 @@ package Exercicio;
 import java.util.Scanner;
 
 public class Pessoa {
-    Scanner read= new Scanner(System.in);
+    private String nome, telefone, email, login, senha;
+    Scanner read = new Scanner(System.in);
 
-    private String nome;
-    private String login;
-    private String senha;
-    private String telefone;
-    private String email;
+    public Pessoa(){
+       /*System.out.println("Nome: ");
+       this.nome = read.next();
+       System.out.println("Telefone: ");
+       this.telefone = read.next();
+       System.out.println("E-mail: ");
+       this.email = read.next();*/
+//        System.out.println("Login: ");
+//        this.login = read.next();
+//        System.out.println("Senha: ");
+//        this.senha = read.next();
+    }
 
+    //-----------------------------------------------------------------------------------------------------------------
 
+    public String getNome() {
+        return nome;
+    }
 
-
-
-    @Override
-    public String toString() {
-        return "Pessoa{" +
-                "nome='" + nome + '\'' +
-                ", login='" + login + '\'' +
-                ", senha='" + senha + '\'' +
-                '}';
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getTelefone() {
@@ -40,14 +45,6 @@ public class Pessoa {
         this.email = email;
     }
 
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
     public String getLogin() {
         return login;
     }
@@ -62,5 +59,16 @@ public class Pessoa {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    @Override
+    public String toString() {
+        return "Cliente:" + "\n" +
+                "-------------------" + "\n" +
+                "Nome: " + nome + "\n" +
+                "Telefone: " + telefone + "\n" +
+                "E-mail: " + email + "\n" +
+                "Login: " + login + "\n" +
+                "Senha: " + senha;
     }
 }
